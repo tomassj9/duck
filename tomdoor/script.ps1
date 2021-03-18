@@ -6,7 +6,7 @@ cd $p
 netsh wlan export profile key=clear
 dir *.xml |% {
 $xml=[xml] (get-content $_)
-$a= "========================================`r`n SSID = "+$xml.WLANProfile.SSIDConfig.SSID.name + "`r`n PASS = " +$xml.WLANProfile.MSM.Security.sharedKey.keymaterial
+$a= xml.WLANProfile.SSIDConfig.SSID.name + "`r`n PASS = " +$xml.WLANProfile.MSM.Security.sharedKey.keymaterial
 Out-File C:\IT\info.txt -Append -InputObject $a
 }
 
